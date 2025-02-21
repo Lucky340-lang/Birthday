@@ -1,0 +1,148 @@
+.card-container {
+    display: flex;
+    align-items: flex-start; /* Aligns the card to the top */
+    justify-content: center;
+    min-height: 100vh; /* Ensures the container takes full viewport height */
+    padding-top: 20px; /* Adds space from the top */
+    background-color: #ffebef; /* Soft pink background */
+}
+
+/* Birthday Card Styling */
+.card {
+    background: white;
+    padding: 20px;
+    width: 80vw;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Subtitle Styling (Static) */
+.subtitle {
+    color: #666;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Title (Instantly Appears) */
+.title {
+    font-size: 2rem;
+    color: #2d6a4f;
+    margin: 10px 0;
+    display: block;
+}
+
+
+/* Message Typing Effect */
+.message {
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 16px; /* Reduce font size slightly */
+    text-align: center;
+    max-width: 100%; /* Reduce max-width for better alignment */
+    margin: 5px auto; /* Reduce space above and below */
+ /* Reduce inner padding */
+    line-height: 1.4; /* Adjust line spacing for better readability */
+}
+  
+
+/* Cursor Blinking Animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Typing Effect */
+@keyframes typing {
+    from {
+        max-width: 0; /* Start small */
+    }
+    to {
+        max-width: 100%; /* Expand smoothly */
+    }
+}
+/* Signature (Appears After Typing) */
+.signature {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s; /* Appears after message is fully typed */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .message {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+    }
+
+    .message {
+        font-size: 0.8rem;
+    }
+
+    .signature {
+        font-size: 0.9rem;
+    }
+}
+
+.memories-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff4d6d; /* Cute pinkish-red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.memories-button:hover {
+    background-color: #d63355; /* Darker pink for hover effect */
+}

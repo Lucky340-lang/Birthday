@@ -1,0 +1,150 @@
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents interference with clicks */
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  .heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: floatUp linear infinite;
+  }
+  
+  /* Floating heart animation */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .heart {
+      font-size: 18px;
+      animation-duration: 5s;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heart {
+      font-size: 14px;
+      animation-duration: 6s;
+    }
+  }
+  body {
+    background-color: #ffd4e5; /* Soft pink background */
+  }
+  
+  body {
+    background-color: #ffd4e5; /* Soft pink background */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* FOR HAPPY BIRTHDAY TEXT */
+
+  .birthday-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffd4e5; /* Soft pink background */
+    overflow: hidden;
+}
+
+/* Hide words initially */
+.word {
+    opacity: 0;
+    transform: translateY(30px);
+    display: inline-block;
+    margin: 0 5px; /* Adds spacing between words */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Animate words when they become visible */
+.word.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Styling */
+.surprise-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #ff4081; /* Pink */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Button appears immediately after last word */
+.show-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effect */
+.surprise-button:hover {
+    background-color: #d81b60; /* Slightly darker pink */
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hidden-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hidden-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .hidden-text p {
+        font-size: 1.2rem;
+    }
+
+    .surprise-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hidden-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hidden-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .hidden-text p {
+        font-size: 1rem;
+    }
+
+    .surprise-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
